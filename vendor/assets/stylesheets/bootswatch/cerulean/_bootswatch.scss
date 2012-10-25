@@ -44,13 +44,15 @@
 		text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.3);
 	}
 
-  &-inverse {
+}
 
-    .navbar-search .search-query {
-      color: $textColor;
-    }
+.navbar-inverse {
+
+  .navbar-search .search-query {
+    color: $textColor;
   }
 }
+
 
 
 @media (max-width: $navbarCollapseWidth) {
@@ -114,10 +116,12 @@ div.subnav {
 	font-family: $headingsFontFamily;
 	text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.2);
 
-	&-fixed {
-		top: $navbarHeight;
-	}
 }
+
+div.subnav-fixed {
+  top: $navbarHeight;
+}
+
 
 
 
