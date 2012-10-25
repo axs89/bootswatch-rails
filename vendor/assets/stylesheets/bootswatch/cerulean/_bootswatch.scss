@@ -1,5 +1,5 @@
 // Swatch: Cerulean
-// Version: 2.0.2
+// Version: 2.1.1
 // -----------------------------------------------------
 
 // TYPOGRAPHY
@@ -7,48 +7,120 @@
 
 @import url("https://fonts.googleapis.com/css?family=Telex");
 
-.navbar, .subnav {
-	font-family: $headingsFontFamily;
-}
+// SCAFFOLDING
+// -----------------------------------------------------
 
 // NAVBAR
 // -----------------------------------------------------
 
-.navbar-inner {
-  @include gradient-vertical-three-colors($navbarBackground, $navbarBackground, .9, $navbarBackgroundHighlight);
+.navbar {
+
+
+	.brand {
+		padding: 14px 20px 16px;
+		font-family: $headingsFontFamily;
+		text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2);
+	}
+
+	li {
+		line-height: 20px;
+	}
+
+	.nav > li > a {
+		padding: 16px 10px 14px;
+		font-family: $headingsFontFamily;
+		text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2);
+	}
+
+	.search-query {
+		border: 1px solid darken($linkColor, 10%);
+		line-height: normal;
+	}
+
+	.navbar-text {
+		padding: 19px 10px 18px;
+		line-height: 13px;
+		color: rgba(0, 0, 0, 0.5);
+		text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.3);
+	}
+
+  &-inverse {
+
+    .navbar-search .search-query {
+      color: $textColor;
+    }
+  }
 }
 
-.navbar .nav .active > a,
-.navbar .nav .active > a:hover {
-  background-color: $navbarBackground;
-  background-color: rgba(0,0,0,.2);
-}
 
-.navbar .search-query {
-	border: 1px solid darken($linkColor, 10%);
-}
+@media (max-width: $navbarCollapseWidth) {
 
-// responsive menu colors
+	.navbar .nav-collapse {
 
-.navbar .nav-collapse.in > .nav > li .dropdown-menu a {
-	color: $white;
+		.nav li > a {
 
-	&:hover {
-		color: $white;
+			font-family: $headingsFontFamily;
+			font-weight: normal;
+			color: $white;
+			text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2);
+
+			&:hover {
+				background-color: #2B7CAC;
+			}
+		}
+
+		.nav .active > a {
+      @include box-shadow(none);
+			background-color: #2B7CAC;
+		}
+
+		.dropdown-menu li > a:hover,
+		.dropdown-menu li > a:focus,
+		.dropdown-submenu:hover > a {
+			background-image: none;
+		}
+
+		.navbar-form,
+		.navbar-search {
+			border: none;
+		}
+
+		.nav-header {
+			color: #2B7CAC;
+		}
+	}
+
+	.navbar-inverse .nav-collapse {
+
+		.nav li > a {
+			color: $navbarInverseLinkColor;
+
+			&:hover {
+				background-color: rgba(0, 0, 0, 0.1);
+			}
+		}
+
+		.nav .active > a,
+		.nav > li > a:hover,
+		.dropdown-menu a:hover {
+			background-color: rgba(0, 0, 0, 0.1) !important;
+		}
 	}
 }
 
-.navbar .nav-collapse.in .nav li > a {
-	color: $white;
 
-	&:hover {
-		background-color: #2B7CAC;
+div.subnav {
+
+	font-family: $headingsFontFamily;
+	text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.2);
+
+	&-fixed {
+		top: $navbarHeight;
 	}
 }
 
-.btn-navbar:hover {
-    background-color: darken($white, 20%);
-}
+
+
 
 // BUTTONS
 // -----------------------------------------------------
